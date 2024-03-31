@@ -16,3 +16,21 @@ section {
     font-size: 40px;
     font-weight: 300;
 }
+
+#output {
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: flex-end;
+    gap: 15px;
+}
+
+.btn {
+    flex-basis: calc(25% - 10px);
+    margin: 5px;
+    font-size: 32px;
+    height: 72px;
+    border: 0;
+    border-bottom: 24px;
+    cursor: pointer;
+    color: white;
+}
