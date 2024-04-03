@@ -18,12 +18,18 @@ function buttonClick(event) {
     //Switch case to control the calculator
     switch (action) {
         case 'number':
-            console.log('number');
+            addValue(value);
             break;
         case 'clear':
-            console.log('clear');
+
             break;
     }
 }
 
 inputBox.addEventListener('click', buttonClick);
+
+function addValue(value) {
+    //Add value to expression
+    expression += value;
+    console.log(expression);
+}
