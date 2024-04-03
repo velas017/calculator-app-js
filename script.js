@@ -21,9 +21,11 @@ function buttonClick(event) {
             addValue(value);
             break;
         case 'clear':
-
             break;
     }
+
+    //Update display
+    updateDisplay(expression, result);
 }
 
 inputBox.addEventListener('click', buttonClick);
@@ -32,4 +34,9 @@ function addValue(value) {
     //Add value to expression
     expression += value;
     console.log(expression);
+}
+
+function updateDisplay(expression, result) {
+    expressionDiv.textContent = expression;
+    resultDiv.textContent = result;
 }
