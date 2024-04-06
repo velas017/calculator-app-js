@@ -26,6 +26,16 @@ function buttonClick(event) {
         case 'backspace':
             backspace();
             break;
+            // Add the result to expression as a starting point if expression is empty 
+        case 'addition':
+        case 'subtraction':
+        case 'multiplication':
+        case 'division':
+            if (expression === '' && result !== '') {
+                startFromResult(value);
+            } else if (expression !== '' && !isLastCharOperator()) {
+                addValue(value);
+            }
     }
 
     //Update display
@@ -52,4 +62,12 @@ function clear() {
 
 function backspace() {
      expression = expression.slice(0, -1);
+}
+
+function isLastCharOperator() {
+    return isNaN(parseInt(expression.slice(-1)));
+}
+
+function startFromResult(value) {
+    expression += result + value;
 }
