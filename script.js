@@ -21,6 +21,7 @@ function buttonClick(event) {
             addValue(value);
             break;
         case 'clear':
+            clear();
             break;
     }
 
@@ -39,4 +40,9 @@ function addValue(value) {
 function updateDisplay(expression, result) {
     expressionDiv.textContent = expression;
     resultDiv.textContent = result;
+}
+
+function clear() {
+    expression = " ";
+    result = '';
 }
