@@ -23,6 +23,9 @@ function buttonClick(event) {
         case 'clear':
             clear();
             break;
+        case 'backspace':
+            backspace();
+            break;
     }
 
     //Update display
@@ -45,4 +48,8 @@ function updateDisplay(expression, result) {
 function clear() {
     expression = " ";
     result = '';
+}
+
+function backspace() {
+     expression = expression.slice(0, -1);
 }
