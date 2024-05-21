@@ -38,7 +38,10 @@ function buttonClick(event) {
             }
             break;
         case 'submit':
-            submit()
+            submit();
+            break;
+        case 'negate':
+            negate();
             break;
     }
 
@@ -89,4 +92,17 @@ function evaluateExpression() {
         : eval < 1
         ? parseFloat(evalResult.toFixed(10))
         : parseFloat(evalResult.toFixed(2));
+}
+
+function negate() {
+    //negate result if expression is empty and result is present 
+    if (expression === '' && result !== '') {
+        result = -result;
+        //toggle the sign of the expression if its not already negative and its not empty
+    } else if (!expression.startsWith('-') && expression !== '') {
+        expression = '-' + expression;
+        //remove the negative sign from the epression if its already negative.
+    } else if (expression.startsWith('-')) {
+        expression = expression.slice(1);
+    }
 }
