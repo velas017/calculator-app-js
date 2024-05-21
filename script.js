@@ -84,7 +84,7 @@ function submit() {
 function evaluateExpression() {
     const evalResult = eval(expression);
     //check if evalResult isNaN or infinite. If it is, return a space character ' '
-    return isNaN(evalResult) || isFinite(evalResult)
+    return isNaN(evalResult) || !isFinite(evalResult)
         ? ' '
         : eval < 1
         ? parseFloat(evalResult.toFixed(10))
