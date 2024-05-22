@@ -43,6 +43,9 @@ function buttonClick(event) {
         case 'negate':
             negate();
             break;
+        case 'mod':
+                percentage();
+                break;
     }
 
     //Update display
@@ -104,5 +107,21 @@ function negate() {
         //remove the negative sign from the epression if its already negative.
     } else if (expression.startsWith('-')) {
         expression = expression.slice(1);
+    }
+}
+
+function percentage() {
+    //evaluate the expression, else it will take the percentage of only the first number 
+    if (expression !== '') {
+        result = evaluateExpression();
+        expression = '';
+        if(!isNaN(result) && isFinite(result)) {
+            result /= 100;
+        } else {
+            result = '';
+        }
+    } else if (result != '') {
+        // if expression is empty but the result exists divide by 100
+        result = parseFloat(result) / 100;
     }
 }
